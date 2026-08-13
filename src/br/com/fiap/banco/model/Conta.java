@@ -36,4 +36,21 @@ public class Conta
     public void setId(long id) { this.id = id; }
     public void setNumero(String numero) { this.numero = numero; }
     public void setDataAbertura(LocalDate dataAbertura) { this.dataAbertura = dataAbertura; }
+
+
+    // Métodos Workers
+    public boolean sacar(double valor)
+    {
+        if (valor > this.saldo) { return false; }
+
+        this.saldo -= valor;
+        return true;
+    }
+
+    public void depositar(double valor)
+    {
+        this.saldo += valor;
+    }
+
+
 }
